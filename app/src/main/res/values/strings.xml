@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Shopping List</string>
+    <string name="app_name">Grocery Checklist</string>
     <string name="add_new_shopping_item">Add new shopping item</string>
     <string name="item_name">Item Name</string>
     <string name="amount">Amount</string>

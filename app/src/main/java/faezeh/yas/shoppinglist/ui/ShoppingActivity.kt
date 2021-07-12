@@ -12,7 +12,11 @@ import faezeh.yas.shoppinglist.data.repositories.ShoppingRepository
 import faezeh.yas.shoppinglist.other.ShoppingItemAdapter
 import kotlinx.android.synthetic.main.activity_shopping.*
 
+
 class ShoppingActivity : AppCompatActivity() {
+
+    lateinit var viewModel: ShoppingViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopping)
@@ -21,7 +25,7 @@ class ShoppingActivity : AppCompatActivity() {
         val repository = ShoppingRepository(database)
         val factory = ShoppingViewModelFactory(repository)
 
-        val viewModel = ViewModelProviders.of(this, factory).get(ShoppingViewModel::class.java)
+        viewModel = ViewModelProviders.of(this, factory).get(ShoppingViewModel::class.java)
 
         val adapter = ShoppingItemAdapter(listOf(), viewModel)
 
