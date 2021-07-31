@@ -32,6 +32,19 @@ class ShoppingActivity : AppCompatActivity() {
 
         val adapter = ShoppingItemAdapter(listOf(), viewModel)
 
+//        if (adapter.itemCount == 0){
+//            hint.visibility = View.VISIBLE
+//        }
+//        else{
+//            hint.visibility = View.GONE
+//        }
+
+
+//        if (adapter.itemCount == 0)
+//        {
+//            Toast.makeText(this, "No records to show!", Toast.LENGTH_SHORT).show();
+//        }
+
         rvShoppingItems.layoutManager = LinearLayoutManager(this)
         rvShoppingItems.adapter = adapter
 

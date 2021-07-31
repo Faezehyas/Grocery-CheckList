@@ -38,12 +38,17 @@ class ShoppingItemAdapter(
         }
 
         holder.itemView.ivPlus.setOnClickListener {
-            currentShoppingItem.amount++
-            viewModel.upsert(currentShoppingItem)
+            if( currentShoppingItem.amount < 9999 ){
+                currentShoppingItem.amount++
+                viewModel.upsert(currentShoppingItem)
+            }
+            else {
+                Toast.makeText(it.context, "\t\tThat's a lot!\nPlease reconsider.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         holder.itemView.ivMinus.setOnClickListener {
-            if(currentShoppingItem.amount > 0){
+            if(currentShoppingItem.amount > 0 ){
                 currentShoppingItem.amount--
                 viewModel.upsert(currentShoppingItem)
             }

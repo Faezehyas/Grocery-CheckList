@@ -24,6 +24,11 @@ class AddShoppingItemDialog(context : Context, var addDialogListener: AddDialogL
                 return@setOnClickListener
             }
 
+            if(amount.toInt() > 9998){
+                Toast.makeText(context, "That's too much for today! :) ", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             val item = ShoppingItem(name,amount.toInt())
             addDialogListener.onAddButtonClicked(item)
             dismiss()
