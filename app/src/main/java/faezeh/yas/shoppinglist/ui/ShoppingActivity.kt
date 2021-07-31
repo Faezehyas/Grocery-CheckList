@@ -2,6 +2,8 @@ package faezeh.yas.shoppinglist.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,6 +21,7 @@ class ShoppingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_ShoppingList)
         setContentView(R.layout.activity_shopping)
 
         val database = ShoppingDataBase(this)
@@ -44,5 +47,10 @@ class ShoppingActivity : AppCompatActivity() {
                 }
             }).show()
         }
+
+        ivlogo.setOnClickListener {
+            Toast.makeText(this.applicationContext, "Have a Good Shopping ^_^", Toast.LENGTH_SHORT).show()
+        }
+
     }
 }
